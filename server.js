@@ -1,12 +1,12 @@
-var express = require('express'),
-  app = express(),
-  port = process.env.PORT || 3000,
-  mongoose = require('mongoose'),
-  Post = require('./api/models/postModel'),
-  bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+const mongoose = require('mongoose');
+const Post = require('./api/models/postModel');
+const bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Postdb');
+mongoose.connect('mongodb://localhost/Blogdb');
 
 
 app.use(bodyParser.urlencoded({ extended: true }));

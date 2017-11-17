@@ -1,26 +1,33 @@
 'use strict';
 
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var PostSchema = new Schema({
+const autoIncrement = require('mongoose-auto-increment');
+
+/* connect to your database here */
+
+const connection = mongoose.createConnection("mongodb://localhost/Blogdb");
+
+/* define your CounterSchema here */
+
+autoIncrement.initialize(connection);
+
+const PostSchema = new Schema({
   title: {
     type: String,
     Required: 'Kindly enter the name of the post'
   },
-  Created_date: {
+  tags: Array,
+  created_date: {
     type: Date,
     default: Date.now
   },
-  // status: {
-  //   type: [{
-  //     type: String,
-  //     enum: ['pending', 'ongoing', 'completed']
-  //   }],
-  //   default: ['pending']
-  // }
 });
 
+
+PostSchema.plugin(autoIncrement.plugin, 'Posts');
+// const Post = mongoose.model('Posts', PostSchema);
 
 module.exports = mongoose.model('Posts', PostSchema);
