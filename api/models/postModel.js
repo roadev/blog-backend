@@ -19,10 +19,14 @@ const PostSchema = new Schema({
     type: String,
     Required: 'Kindly enter the name of the post'
   },
-  tags: Array,
-  created_date: {
-    type: Date,
-    default: Date.now
+  body: {
+    type: String,
+    Required: 'Kindly enter the name of the post'
+  },
+  // tags: Array,
+  date: {
+    type: String,
+    Required: 'Kindly enter the date of the post'
   },
 });
 
