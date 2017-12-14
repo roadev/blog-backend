@@ -8,6 +8,7 @@ const autoIncrement = require('mongoose-auto-increment');
 
 /* connect to your database here */
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/Blogdb';
+console.log(MONGODB_URI);
 const connection = mongoose.createConnection(MONGODB_URI);
 
 /* define your CounterSchema here */
