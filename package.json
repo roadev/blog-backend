@@ -1,7 +1,7 @@
 {
-  "name": "todolistapi",
+  "name": "Blog API",
   "version": "1.0.0",
-  "description": "RESTful todoListApi",
+  "description": "RESTful BlogAPI",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,8 +16,8 @@
     "API",
     "Tutorial"
   ],
-  "author": "olatunde garuba",
-  "license": "ISC",
+  "author": "Juan Roa",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/generalgmt/RESTfulAPITutorial/issues"
   },

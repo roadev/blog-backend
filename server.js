@@ -5,9 +5,10 @@ const mongoose = require('mongoose');
 const Post = require('./api/models/postModel');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const MONGOLAB_URI = process.env.MONGOLAB_URI || 'mongodb://localhost/Blogdb';
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Blogdb');
+mongoose.connect(MONGOLAB_URI);
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
