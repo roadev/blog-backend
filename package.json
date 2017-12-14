@@ -1,5 +1,5 @@
 {
-  "name": "Blog API",
+  "name": "BlogAPI",
   "version": "1.0.0",
   "description": "RESTful BlogAPI",
   "main": "index.js",
