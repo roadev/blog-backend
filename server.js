@@ -3,6 +3,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 const Post = require('./api/models/postModel');
+const Tag = require('./api/models/tagModel');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/Blogdb';
@@ -16,10 +17,10 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
-var routes = require('./api/routes/postRoutes');
+const routes = require('./api/routes');
 routes(app);
 
-app.use(function(req, res) {
+app.use((req, res) => {
   res.status(404).send({url: `${req.originalUrl} not found`})
 });
 
